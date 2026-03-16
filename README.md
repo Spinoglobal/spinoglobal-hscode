@@ -69,7 +69,6 @@ Thêm block **Custom HTML** và paste đoạn iframe ở trên.
 
 - Thuế suất mang tính **tham khảo** ở cấp mã 8 số
 - Tra cứu chính thức tại [customs.gov.vn](https://customs.gov.vn)
-- Tính năng AI nhận diện ảnh chỉ hoạt động khi mở trong **claude.ai** (cần API key)
 
 ## License
 
