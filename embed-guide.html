@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hướng dẫn nhúng - Spino Global HS Code</title>
+<style>
+body{font-family:'Segoe UI',sans-serif;max-width:800px;margin:40px auto;padding:0 20px;color:#1a2744;line-height:1.7}
+h1{font-size:24px;margin-bottom:8px}
+h2{font-size:18px;margin-top:30px;color:#1a2744;border-bottom:2px solid #e2e8f2;padding-bottom:6px}
+code{background:#f0f4fa;padding:2px 6px;border-radius:4px;font-size:13px}
+pre{background:#1a2744;color:#e4eaf4;padding:16px;border-radius:8px;overflow-x:auto;font-size:13px;line-height:1.5}
+pre code{background:none;padding:0;color:inherit}
+.note{background:#fff8e6;border-left:4px solid #f59e0b;padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0;font-size:14px}
+.note b{color:#c8860a}
+a{color:#3d5a8f}
+</style>
+</head>
+<body>
+<h1>🔧 Hướng dẫn nhúng công cụ HS Code vào website</h1>
+<p>Sau khi deploy lên GitHub Pages, bạn có thể nhúng công cụ vào bất kỳ website nào.</p>
+
+<h2>1. Nhúng cơ bản (iframe)</h2>
+<pre><code>&lt;iframe 
+  src="https://YOUR_USERNAME.github.io/spinoglobal-hscode/" 
+  width="100%" 
+  height="800" 
+  frameborder="0"
+  style="border:none"
+&gt;&lt;/iframe&gt;</code></pre>
+
+<h2>2. Nhúng đẹp hơn (có shadow + bo góc)</h2>
+<pre><code>&lt;div style="max-width:1000px;margin:20px auto"&gt;
+  &lt;iframe 
+    src="https://YOUR_USERNAME.github.io/spinoglobal-hscode/" 
+    width="100%" 
+    height="850" 
+    frameborder="0"
+    style="border:none;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.1)"
+  &gt;&lt;/iframe&gt;
+&lt;/div&gt;</code></pre>
+
+<h2>3. WordPress</h2>
+<p>Thêm block <b>Custom HTML</b> rồi paste đoạn iframe ở trên.</p>
+
+<h2>4. Nhúng full-page (toàn trang)</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Tra cứu HS Code - Spino Global&lt;/title&gt;
+  &lt;style&gt;
+    body{margin:0;padding:0;overflow:hidden}
+    iframe{width:100%;height:100vh;border:none}
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;iframe src="https://YOUR_USERNAME.github.io/spinoglobal-hscode/"&gt;&lt;/iframe&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<div class="note">
+<b>⚠️ Lưu ý:</b> Thay <code>YOUR_USERNAME</code> bằng tên GitHub của bạn. Nếu đặt tên repo khác thì thay <code>spinoglobal-hscode</code> tương ứng.
+</div>
+
+<h2>5. Tùy chỉnh chiều cao tự động</h2>
+<pre><code>&lt;script&gt;
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.type === 'resize') {
+    document.getElementById('hscode').style.height = e.data.height + 'px';
+  }
+});
+&lt;/script&gt;
+&lt;iframe id="hscode" src="https://YOUR_USERNAME.github.io/spinoglobal-hscode/" 
+  width="100%" height="800" frameborder="0" style="border:none"&gt;&lt;/iframe&gt;</code></pre>
+
+</body>
+</html>
