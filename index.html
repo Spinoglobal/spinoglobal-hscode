@@ -305,7 +305,7 @@ function analyzeImage(){
   document.getElementById("aiResult").innerHTML="<div class='ai-loading'><div class='spinner'></div>AI \u0111ang nh\u1eadn di\u1ec7n s\u1ea3n ph\u1ea9m...</div>";
   var base64=aiImageData.split(",")[1];
   var mediaType=aiImageData.split(";")[0].split(":")[1];
-  fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key="+GEMINI_API_KEY,{
+  fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key="+GEMINI_API_KEY,{
     method:"POST",
     headers:{"Content-Type":"application/json"},
     body:JSON.stringify({
